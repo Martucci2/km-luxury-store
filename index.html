@@ -7,61 +7,128 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div style="
+  <!-- MENU HAMBURGER -->
+<div id="menuBar" style="
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(10px);
+  padding: 12px 16px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 16px;
   z-index: 9999;
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 ">
 
+  <!-- HAMBURGER -->
+  <div onclick="toggleMenu()" style="
+    font-size: 22px;
+    cursor: pointer;
+    user-select: none;
+  ">
+    ☰
+  </div>
+
+  <!-- LOGO -->
   <div style="
+    margin-left: 12px;
     font-family: Georgia, serif;
-    font-size: 14px;
     letter-spacing: 2px;
     font-weight: bold;
+    font-size: 14px;
   ">
     KM LUXURY
   </div>
-
-  <div style="display: flex; gap: 10px;">
-    <a href="https://wa.me/393341991909?text=Ciao%20KM%20Luxury%20Store,%20vorrei%20fare%20un%20ordine"
-       style="
-         background: black;
-         color: white;
-         padding: 8px 14px;
-         border-radius: 20px;
-         text-decoration: none;
-         font-size: 13px;
-         font-weight: bold;
-       ">
-       Ordina
-    </a>
-
-    <a href="https://www.instagram.com/km.luxury.store"
-       target="_blank"
-       style="
-         background: #E1306C;
-         color: white;
-         padding: 8px 14px;
-         border-radius: 20px;
-         text-decoration: none;
-         font-size: 13px;
-         font-weight: bold;
-       ">
-       CONTATTACI
-    </a>
-  </div>
-
 </div>
-<div style="height: 60px;"></div>
+
+<!-- MENU A SCOMPARSA -->
+<div id="sideMenu" style="
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background: white;
+  padding: 25px 20px;
+  transition: left 0.3s ease;
+  z-index: 9998;
+  box-shadow: 5px 0 30px rgba(0,0,0,0.2);
+">
+
+  <!-- CERCA -->
+  <input type="text" placeholder="Cerca prodotti..."
+  style="
+    width: 100%;
+    padding: 12px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    margin-bottom: 25px;
+    font-size: 14px;
+  ">
+
+  <!-- LINK -->
+  <a href="#prodotti" onclick="toggleMenu()" style="
+    display: block;
+    padding: 12px 0;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  ">Prodotti</a>
+
+  <hr style="margin: 20px 0;">
+
+  <p style="margin-bottom: 10px; font-weight: bold;">Contattaci</p>
+
+  <a href="https://wa.me/393341991909?text=Ciao%20KM%20Luxury%20Store"
+     style="
+       display: block;
+       margin-bottom: 10px;
+       text-decoration: none;
+       color: black;
+     ">
+     📲 WhatsApp
+  </a>
+
+  <a href="https://www.instagram.com/km.luxury.store"
+     target="_blank"
+     style="
+       display: block;
+       text-decoration: none;
+       color: black;
+     ">
+     📸 Instagram
+  </a>
+</div>
+
+<!-- OVERLAY -->
+<div id="overlay" onclick="toggleMenu()" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 9997;
+"></div>
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("sideMenu");
+  const overlay = document.getElementById("overlay");
+
+  if (menu.style.left === "0px") {
+    menu.style.left = "-100%";
+    overlay.style.display = "none";
+  } else {
+    menu.style.left = "0px";
+    overlay.style.display = "block";
+  }
+}
+</script>
 
 <section id="linkbio" style="
   <div style="
