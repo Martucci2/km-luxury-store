@@ -159,9 +159,41 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 3
 </div>
 
 
-        <h3>Prodotto 1</h3>
-        <p style="color: #777;">Descrizione breve del prodotto.</p>
-        <a href="https://wa.me/393341991909?text=Voglio+prodotto+1" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #000; color: white; text-decoration: none; font-weight: bold; border-radius: 30px;">Ordina su WhatsApp</a>
+        <div style="
+  width: 300px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+"
+onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 25px 45px rgba(0,0,0,0.3)'"
+onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.15)'"
+>
+
+  <img src="prodotto1.jpg" style="width:100%; display:block;">
+
+  <div style="padding: 15px; background: white; text-align: left;">
+    <h3 style="margin: 0;">Felpa Nike</h3>
+    <p style="margin: 5px 0; color: #555;">Colore: Nero</p>
+    <p style="margin: 5px 0;">Taglie: S / M / L / XL</p>
+    <p style="margin: 10px 0; font-weight: bold; font-size: 18px;">€79</p>
+
+    <a href="https://wa.me/393341991909?text=Ciao,%20vorrei%20la%20Felpa%20Nike%20nera,%20taglia%20___"
+       style="
+         display:block;
+         text-align:center;
+         padding:12px;
+         background:black;
+         color:white;
+         text-decoration:none;
+         font-weight:bold;
+         border-radius:30px;
+       ">
+       Ordina su WhatsApp
+    </a>
+  </div>
+</div>
+
       </div>
     </div>
 
